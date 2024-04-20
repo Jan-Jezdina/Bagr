@@ -1,0 +1,25 @@
+
+# BEGIN WordPress
+# Direktivy (řádky) mezi "BEGIN WordPress" a "END WordPress" jsou
+# dynamicky generované a měly by být upravovány pouze pomocí filtrů WordPressu.
+# Veškeré změny směrnic mezi těmito značkami budou přepsány.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /bagr/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /bagr/index.php [L]
+</IfModule>
+
+# END WordPress
+# BEGIN Simply Static
+# Direktivy (řádky) mezi "BEGIN Simply Static" a "END Simply Static" jsou
+# dynamicky generované a měly by být upravovány pouze pomocí filtrů WordPressu.
+# Veškeré změny směrnic mezi těmito značkami budou přepsány.
+<Files "C:\xampp\htdocs\Bagr/wp-content/uploads\simply-static\e1c2e19e697368b1f0bf1b2772edf05a-debug.txt">
+require all denied
+require host localhost
+</Files>
+# END Simply Static
